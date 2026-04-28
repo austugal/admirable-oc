@@ -84,7 +84,7 @@
   // 3. SYSTEM INFO + COORDS reveal
   // ============================================
   if (coords) coords.textContent = '38.7223° N · 9.1393° W';
-  if (systemInfo) systemInfo.innerHTML = 'APERTURE ENGINE · v0.2<br>OPERA CLOUD · v25.5 REFERENCE<br>BUILD ' + new Date().toISOString().slice(0,10).replace(/-/g,'');
+  if (systemInfo) systemInfo.innerHTML = 'APERTURE ENGINE · v0.2<br>ORACLE OPERA CLOUD · LATEST<br>BUILD ' + new Date().toISOString().slice(0,10).replace(/-/g,'');
 
   // ============================================
   // 4. STATUS SEQUENCE - one line per topic
@@ -92,13 +92,13 @@
   var statuses = [
     { txt: 'INITIALISING APERTURE CORE', tick: 660 },
     { txt: 'CONNECTING TO LISBON · 38.72°N 9.14°W', tick: 720 },
-    { txt: 'LOADING ORACLE OPERA CLOUD v25.5 REFERENCE', tick: 780 },
+    { txt: 'LOADING ORACLE OPERA CLOUD REFERENCE', tick: 780 },
     { txt: 'INDEXING 12 PMS MODULES', tick: 820 },
     { txt: 'INDEXING SAF-T PORTUGAL · AT SCHEMA', tick: 860 },
     { txt: 'INDEXING SII ESPAÑA · AEAT SCHEMA', tick: 900 },
     { txt: 'INDEXING REGIONAL EXPORTS · BAS · CAT', tick: 940 },
-    { txt: 'LOADING 60+ ORACLE VIDEO TUTORIALS', tick: 980 },
-    { txt: 'LOADING 16 OXI XML SAMPLES', tick: 1020 },
+    { txt: 'LOADING ORACLE VIDEO TUTORIAL INDEX', tick: 980 },
+    { txt: 'LOADING OXI XML INTEGRATION SAMPLES', tick: 1020 },
     { txt: 'CHECKING TRADEMARK COMPLIANCE', tick: 1060 },
     { txt: 'APERTURE READY · ALL SYSTEMS ONLINE', tick: 1200, done: true }
   ];

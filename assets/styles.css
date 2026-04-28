@@ -1,5 +1,5 @@
 :root {
-  --bg: #f4f5f7;
+  --bg: #eaedf1;
   --surface: #ffffff;
   --ink: #1d2939;
   --ink-soft: #475467;
@@ -33,10 +33,10 @@ a { color: inherit; text-decoration: none; }
 .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
 .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 
-/* CINEMATIC BOOT INTRO - matches library background */
+/* CINEMATIC BOOT INTRO - matches library background, deeper tone */
 #intro {
   position: fixed; inset: 0;
-  background: #f4f5f7;
+  background: #e1e5ea;
   z-index: 9999;
   overflow: hidden;
   transition: opacity 0.8s ease;
@@ -49,9 +49,9 @@ a { color: inherit; text-decoration: none; }
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(circle at 50% 50%, rgba(196,78,44,0.05) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(0,122,138,0.04) 0%, transparent 50%),
-    linear-gradient(180deg, #f4f5f7 0%, #e9ecf0 100%);
+    radial-gradient(circle at 50% 50%, rgba(196,78,44,0.07) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(0,122,138,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #e1e5ea 0%, #d4d9df 100%);
   pointer-events: none;
 }
 
@@ -214,7 +214,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   border-top: 1px solid rgba(29,41,57,0.08);
   z-index: 2;
-  background: rgba(244,245,247,0.85);
+  background: rgba(225,229,234,0.85);
   backdrop-filter: blur(8px);
 }
 .boot-system-info {

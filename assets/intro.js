@@ -3,11 +3,15 @@
   'use strict';
 
   var intro = document.getElementById('intro');
-  if (!intro) return;
+  if (!intro) {
+    document.body.classList.remove('intro-active');
+    return;
+  }
 
   // Skip if already entered this session
   if (sessionStorage.getItem('apertureEntered') === '1') {
     intro.style.display = 'none';
+    document.body.classList.remove('intro-active');
     return;
   }
 
@@ -17,15 +21,33 @@
   var clock = document.getElementById('boot-clock');
   var systemInfo = document.getElementById('boot-system');
 
+  // Lock body scroll while intro visible (mobile - stops library showing underneath)
+  document.body.classList.add('intro-active');
+
   // ============================================
   // 1. AUDIO - whoosh on load + ticks per status
   // ============================================
   var AudioCtx = window.AudioContext || window.webkitAudioContext;
   var audioCtx = null;
+  var audioUnlocked = false;
   function initAudio() {
     if (!audioCtx) {
       try { audioCtx = new AudioCtx(); } catch(e) { audioCtx = null; }
     }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    // iOS unlock - play a silent buffer
+    if (audioCtx && !audioUnlocked) {
+      try {
+        var buffer = audioCtx.createBuffer(1, 1, 22050);
+        var source = audioCtx.createBufferSource();
+        source.buffer = buffer;
+        source.connect(audioCtx.destination);
+        source.start(0);
+      } catch(e) {}
+    }
+    audioUnlocked = true;
   }
   function playWhoosh() {
     if (!audioCtx) return;
@@ -91,12 +113,12 @@
   // ============================================
   var statuses = [
     { txt: 'INITIALISING APERTURE CORE', tick: 660 },
-    { txt: 'CONNECTING TO LISBON · 38.72°N 9.14°W', tick: 720 },
-    { txt: 'LOADING ORACLE OPERA CLOUD REFERENCE', tick: 780 },
-    { txt: 'INDEXING 12 PMS MODULES', tick: 820 },
-    { txt: 'INDEXING SAF-T PORTUGAL · AT SCHEMA', tick: 860 },
-    { txt: 'INDEXING SII ESPAÑA · AEAT SCHEMA', tick: 900 },
-    { txt: 'INDEXING REGIONAL EXPORTS · BAS · CAT', tick: 940 },
+    { txt: 'CONNECTING LISBON · 38.72°N 9.14°W', tick: 720 },
+    { txt: 'CONNECTING MELBOURNE · 37.81°S 144.96°E', tick: 760 },
+    { txt: 'LOADING ORACLE OPERA CLOUD REFERENCE', tick: 800 },
+    { txt: 'INDEXING PMS MODULES', tick: 840 },
+    { txt: 'INDEXING FISCAL EXPORTS · PT · ES', tick: 880 },
+    { txt: 'INDEXING BACK OFFICE EXPORTS · SUN · SAP', tick: 920 },
     { txt: 'LOADING ORACLE VIDEO TUTORIAL INDEX', tick: 980 },
     { txt: 'LOADING OXI XML INTEGRATION SAMPLES', tick: 1020 },
     { txt: 'CHECKING TRADEMARK COMPLIANCE', tick: 1060 },
@@ -133,11 +155,16 @@
     var cx = W/2, cy = H/2, R = 120;
     var rotation = 0;
     var arcs = [
-      { from: { lat: 38.72, lng: -9.14 }, to: { lat: 40.42, lng: -3.70 }, color: '#c44e2c', name: 'LIS-MAD' },
-      { from: { lat: 38.72, lng: -9.14 }, to: { lat: 41.39, lng: 2.17 }, color: '#c44e2c', name: 'LIS-BCN' },
+      // Primary arc - Lisbon to Melbourne (the dual-base)
+      { from: { lat: 38.72, lng: -9.14 }, to: { lat: -37.81, lng: 144.96 }, color: '#c44e2c', name: 'LIS-MEL', primary: true },
+      { from: { lat: -37.81, lng: 144.96 }, to: { lat: 38.72, lng: -9.14 }, color: '#c44e2c', name: 'MEL-LIS', primary: true },
+      // Secondary connections from Lisbon
+      { from: { lat: 38.72, lng: -9.14 }, to: { lat: 40.42, lng: -3.70 }, color: '#007a8a', name: 'LIS-MAD' },
       { from: { lat: 38.72, lng: -9.14 }, to: { lat: 51.51, lng: -0.13 }, color: '#007a8a', name: 'LIS-LON' },
       { from: { lat: 38.72, lng: -9.14 }, to: { lat: 50.11, lng: 8.68 }, color: '#007a8a', name: 'LIS-FRA' },
-      { from: { lat: 38.72, lng: -9.14 }, to: { lat: 25.20, lng: 55.27 }, color: '#007a8a', name: 'LIS-DXB' }
+      // Secondary from Melbourne
+      { from: { lat: -37.81, lng: 144.96 }, to: { lat: -33.87, lng: 151.21 }, color: '#007a8a', name: 'MEL-SYD' },
+      { from: { lat: -37.81, lng: 144.96 }, to: { lat: 1.35, lng: 103.82 }, color: '#007a8a', name: 'MEL-SIN' }
     ];
 
     function project(lat, lng, rot) {
@@ -203,7 +230,6 @@
         ctx.beginPath();
         ctx.arc(lisbon.x, lisbon.y, 4, 0, Math.PI * 2);
         ctx.fill();
-        // Pulse ring
         ctx.strokeStyle = 'rgba(196, 78, 44, ' + (0.6 - (rotation % 60) / 60 * 0.6) + ')';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
@@ -211,32 +237,44 @@
         ctx.stroke();
       }
 
+      // Melbourne hub - dual base
+      var melbourne = project(-37.81, 144.96, rotation);
+      if (melbourne.z > -50) {
+        ctx.fillStyle = '#c44e2c';
+        ctx.beginPath();
+        ctx.arc(melbourne.x, melbourne.y, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(196, 78, 44, ' + (0.6 - ((rotation + 30) % 60) / 60 * 0.6) + ')';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(melbourne.x, melbourne.y, 4 + ((rotation + 30) % 60) / 4, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
       // Connection arcs (animated draw)
       var progress = Math.min(rotation / 100, 1);
       arcs.forEach(function(a, i) {
-        if (progress < i * 0.15) return;
-        var arcProg = Math.min((progress - i * 0.15) / 0.6, 1);
+        if (progress < i * 0.1) return;
+        var arcProg = Math.min((progress - i * 0.1) / 0.6, 1);
         var p1 = project(a.from.lat, a.from.lng, rotation);
         var p2 = project(a.to.lat, a.to.lng, rotation);
         if (p1.z > -50 && p2.z > -50) {
           ctx.strokeStyle = a.color;
-          ctx.globalAlpha = 0.6;
-          ctx.lineWidth = 1.2;
+          ctx.globalAlpha = a.primary ? 0.85 : 0.55;
+          ctx.lineWidth = a.primary ? 2 : 1.2;
           ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
-          // Quadratic curve through midpoint, lifted
           var mx = (p1.x + p2.x) / 2;
-          var my = (p1.y + p2.y) / 2 - 30;
+          var my = (p1.y + p2.y) / 2 - (a.primary ? 60 : 30);
           var endX = p1.x + (p2.x - p1.x) * arcProg;
           var endY = p1.y + (p2.y - p1.y) * arcProg;
           ctx.quadraticCurveTo(mx, my, endX, endY);
           ctx.stroke();
-          // Endpoint dot
           if (arcProg >= 1) {
             ctx.fillStyle = a.color;
             ctx.globalAlpha = 0.8;
             ctx.beginPath();
-            ctx.arc(p2.x, p2.y, 2.5, 0, Math.PI * 2);
+            ctx.arc(p2.x, p2.y, a.primary ? 3 : 2.5, 0, Math.PI * 2);
             ctx.fill();
           }
           ctx.globalAlpha = 1;
@@ -254,9 +292,12 @@
   // ============================================
   function enterSite() {
     sessionStorage.setItem('apertureEntered', '1');
+    initAudio();
+    playWhoosh();
     intro.classList.add('fading');
     setTimeout(function() {
       intro.style.display = 'none';
+      document.body.classList.remove('intro-active');
     }, 800);
   }
 

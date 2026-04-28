@@ -154,14 +154,14 @@
 
       // Outer pulsing ring
       var pulse = Math.sin(rotation * 0.05) * 0.3 + 0.7;
-      ctx.strokeStyle = 'rgba(196, 78, 44, ' + (0.15 * pulse) + ')';
+      ctx.strokeStyle = 'rgba(196, 78, 44, ' + (0.25 * pulse) + ')';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.arc(cx, cy, R + 20, 0, Math.PI * 2);
       ctx.stroke();
 
       // Sphere wireframe - latitude lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.strokeStyle = 'rgba(29, 41, 57, 0.18)';
       ctx.lineWidth = 1;
       for (var lat = -60; lat <= 60; lat += 30) {
         ctx.beginPath();
@@ -186,7 +186,8 @@
       }
 
       // Equator highlight
-      ctx.strokeStyle = 'rgba(196, 78, 44, 0.25)';
+      ctx.strokeStyle = 'rgba(196, 78, 44, 0.4)';
+      ctx.lineWidth = 1.2;
       ctx.beginPath();
       for (var lng3 = -180; lng3 <= 180; lng3 += 3) {
         var pe = project(0, lng3, rotation);

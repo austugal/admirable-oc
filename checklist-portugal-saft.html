@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal SAF-T Fiscal Checklist · Aperture</title>
+<meta name="description" content="Production-ready 12-page configuration checklist for OPERA Cloud properties going live in Portugal. 40+ checks across OPERA Controls, transaction codes, fiscal folios, document series, AT submission. Free sample, full version €39.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* Page-specific styles for the checklist preview */
+  .checklist-hero {
+    background: linear-gradient(180deg, #fff8f5 0%, #fff 100%);
+    border: 1px solid rgba(196, 78, 44, 0.15);
+    border-radius: 16px;
+    padding: 48px;
+    margin-bottom: 32px;
+  }
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 32px 0;
+  }
+  @media (max-width: 900px) {
+    .price-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .price-grid { grid-template-columns: 1fr; }
+  }
+  .price-card {
+    background: var(--surface);
+    border: 1px solid rgba(29, 41, 57, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+  }
+  .price-card.featured {
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 24px rgba(196, 78, 44, 0.12);
+    transform: translateY(-4px);
+  }
+  .price-card .tier-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .price-card .tier-price {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .price-card .tier-price small {
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-family: 'Inter', sans-serif;
+  }
+  .price-card .tier-desc {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin: 12px 0 16px;
+    line-height: 1.5;
+    flex: 1;
+  }
+  .price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  .price-card li {
+    font-size: 12px;
+    color: var(--ink);
+    padding: 4px 0 4px 18px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .price-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: bold;
+  }
+  .price-card .buy-btn {
+    display: block;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  .price-card.featured .buy-btn {
+    background: var(--accent);
+    color: white;
+  }
+  .price-card.featured .buy-btn:hover { background: #a83d1f; }
+  .price-card .buy-btn.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(29, 41, 57, 0.2);
+  }
+  .price-card .buy-btn.secondary:hover { background: var(--bg); }
+
+  .sample-section {
+    background: var(--surface);
+    border: 1px solid rgba(29, 41, 57, 0.08);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 32px 0;
+    position: relative;
+  }
+  .sample-badge {
+    display: inline-block;
+    background: var(--teal-soft);
+    color: var(--teal-dark);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .sample-section h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 12px 0;
+    color: var(--ink);
+  }
+  .sample-section h4 {
+    font-size: 14px;
+    margin: 24px 0 8px 0;
+    color: var(--ink);
+  }
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+  .check-list li {
+    padding: 10px 0 10px 32px;
+    border-bottom: 1px solid rgba(29, 41, 57, 0.06);
+    position: relative;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li:before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .check-list li code {
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+  }
+  .check-list li strong { color: var(--accent); }
+
+  .gated-preview {
+    position: relative;
+    margin: 32px 0;
+    border: 1px solid rgba(29, 41, 57, 0.08);
+    border-radius: 12px;
+    padding: 32px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--surface) 50%, rgba(255, 248, 245, 0.8) 100%);
+    overflow: hidden;
+  }
+  .gated-preview .blur-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+  }
+  .gated-preview h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 24px;
+    color: var(--ink);
+    margin: 0 0 16px 0;
+  }
+  .gated-preview .locked-content {
+    filter: blur(4px);
+    user-select: none;
+    pointer-events: none;
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .gated-preview .unlock-cta {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 12px 32px rgba(196, 78, 44, 0.3);
+    z-index: 2;
+  }
+  .gated-preview .unlock-cta:hover { background: #a83d1f; }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 32px;
+    margin: 24px 0;
+  }
+  @media (max-width: 700px) { .toc-grid { grid-template-columns: 1fr; } }
+  .toc-item {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(29, 41, 57, 0.08);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--ink);
+  }
+  .toc-item .num { color: var(--ink-soft); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .toc-item.locked { color: var(--ink-soft); }
+  .toc-item.locked .lock { font-size: 11px; }
+
+  .faq-block { margin: 24px 0; }
+  .faq-block details {
+    border-bottom: 1px solid rgba(29, 41, 57, 0.08);
+    padding: 12px 0;
+  }
+  .faq-block summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    padding: 4px 0;
+    list-style: none;
+  }
+  .faq-block summary:before {
+    content: '+';
+    color: var(--accent);
+    margin-right: 12px;
+    font-weight: 400;
+  }
+  .faq-block details[open] summary:before { content: '−'; }
+  .faq-block details p {
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 8px 0 0 24px;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><div class="brand-mark"></div><span class="name">Aperture<span class="dot">.</span></span></a>
+    <div class="topbar-meta">
+      <span class="pill">PAID TOOLKIT · PT</span>
+      <span>v0.2 · IN DEVELOPMENT</span>
+    </div>
+  </div>
+</header>
+
+<nav class="menubar">
+  <div class="menubar-inner">
+    <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a>
+    <a href="modules.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Modules</a>
+    <a href="services.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Services</a>
+    <a href="resources.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Documentation</a>
+    <a href="videos.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Videos</a>
+    <a href="xml-library.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6 M16 13H8 M16 17H8"/></svg>XML Samples</a>
+    <div class="menubar-actions">
+      <a href="index.html#waitlist" class="btn btn-accent" style="padding: 6px 14px; font-size: 12px;">Early access</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">— Paid toolkit · Portugal</p>
+      <h1>Portugal SAF-T Fiscal <span class="accent">Checklist</span></h1>
+      <p class="subtitle">Forty plus production checks for OPERA Cloud properties going live in Portugal · Validated against AT requirements and Oracle's PT_SAFT_104 export</p>
+    </div>
+    <div class="page-header-meta">
+      <span>12 PAGES · PDF</span>
+      <span>·</span>
+      <span>UPDATED QUARTERLY</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="checklist-hero">
+    <p class="eyebrow" style="background: rgba(196, 78, 44, 0.1); color: var(--accent);">— Why this exists</p>
+    <h2 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 36px; font-weight: 400; margin: 16px 0; color: var(--ink); line-height: 1.2;">No Oracle support ticket fixes this. <span class="accent">No public guide covers it.</span></h2>
+    <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.7; max-width: 720px;">Going live with OPERA Cloud in Portugal means hitting forty plus configuration touch points across OPERA Controls, transaction codes, document numbering, fiscal folios, digital signatures, AT communications, and the PT_SAFT_104 export. Miss one and you're either rejecting first invoices or filing late SAF-T returns. Oracle documentation is exhaustive but scattered across six PDFs and a localisation portal. This checklist consolidates the lot into one printable document built from production go-lives.</p>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section-head">
+    <h2>Choose your <span class="accent">tier</span></h2>
+    <span class="count">FOUNDING COHORT PRICING</span>
+  </div>
+
+  <div class="price-grid">
+    <div class="price-card">
+      <span class="tier-name">Free preview</span>
+      <div class="tier-price">€0</div>
+      <p class="tier-desc">First three pages. Full table of contents. Five sample checks. Verify the depth before paying.</p>
+      <ul>
+        <li>Pages 1 to 3 of 12</li>
+        <li>Full TOC visible</li>
+        <li>Five OPERA Control checks</li>
+        <li>Email-gated download</li>
+      </ul>
+      <a href="#sample-content" class="buy-btn secondary">Read sample below</a>
+    </div>
+
+    <div class="price-card featured">
+      <span class="tier-name" style="color: var(--accent);">Standard · Most popular</span>
+      <div class="tier-price">€39 <small>/ one-off</small></div>
+      <p class="tier-desc">Full 12-page PDF. Forty plus checks across the whole fiscal stack. For one property.</p>
+      <ul>
+        <li>Full 12-page PDF</li>
+        <li>40+ configuration checks</li>
+        <li>OPERA Controls reference</li>
+        <li>Screenshots of each setting</li>
+        <li>AT submission walkthrough</li>
+        <li>Quarterly updates for 12 months</li>
+      </ul>
+      <a href="#buy-standard" class="buy-btn" data-tier="standard" data-price="39">Buy €39</a>
+    </div>
+
+    <div class="price-card">
+      <span class="tier-name">Pro</span>
+      <div class="tier-price">€89 <small>/ one-off</small></div>
+      <p class="tier-desc">Standard plus the editable Excel tracking sheet for multi-property rollouts. 30 days email support.</p>
+      <ul>
+        <li>Everything in Standard</li>
+        <li>Excel tracking sheet</li>
+        <li>Multi-property template</li>
+        <li>30 days email support</li>
+        <li>Priority on quarterly updates</li>
+      </ul>
+      <a href="#buy-pro" class="buy-btn secondary" data-tier="pro" data-price="89">Buy €89</a>
+    </div>
+
+    <div class="price-card">
+      <span class="tier-name">Agency</span>
+      <div class="tier-price">€249 <small>/ one-off</small></div>
+      <p class="tier-desc">Pro plus white-label rights. Resell to your hotel clients under your own brand. For consultants and integrators.</p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>White-label PDF source</li>
+        <li>Resell rights to your clients</li>
+        <li>Editable .docx version</li>
+        <li>Logo replacement guide</li>
+      </ul>
+      <a href="#buy-agency" class="buy-btn secondary" data-tier="agency" data-price="249">Buy €249</a>
+    </div>
+  </div>
+
+  <p style="font-size: 12px; color: var(--ink-soft); text-align: center; margin: 8px 0 32px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em;">
+    PAYMENT VIA STRIPE · INSTANT PDF DELIVERY · 14-DAY REFUND IF NOT FIT FOR PURPOSE
+  </p>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="section-head">
+    <h2>What's <span class="accent">inside</span></h2>
+    <span class="count">12 PAGES · 12 SECTIONS</span>
+  </div>
+  <p class="section-intro">Every section maps to a real configuration step. Every check links back to a specific OPERA Control or transaction code. Sections marked free are visible in the sample below.</p>
+
+  <div class="toc-grid">
+    <div class="toc-item"><span><span class="num">01.</span> Property &amp; Country Mode setup</span><span style="color: var(--accent); font-size: 11px; font-weight: 600;">FREE</span></div>
+    <div class="toc-item"><span><span class="num">02.</span> Document numbering &amp; series</span><span style="color: var(--accent); font-size: 11px; font-weight: 600;">FREE</span></div>
+    <div class="toc-item"><span><span class="num">03.</span> Fiscal folio types &amp; print tasks</span><span style="color: var(--accent); font-size: 11px; font-weight: 600;">FREE</span></div>
+    <div class="toc-item locked"><span><span class="num">04.</span> Transaction codes &amp; tax mapping</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">05.</span> Tax types, IVA codes, exemption reasons</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">06.</span> NIF validation &amp; profile rules</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">07.</span> Digital signatures &amp; ATCUD</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">08.</span> PT_SAFT_104 export configuration</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">09.</span> AT communications &amp; webservice setup</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">10.</span> Cancel &amp; credit note workflows</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">11.</span> Pre go-live validation pack</span><span class="lock">🔒</span></div>
+    <div class="toc-item locked"><span><span class="num">12.</span> Monthly SAF-T submission runbook</span><span class="lock">🔒</span></div>
+  </div>
+
+  <!-- SAMPLE CONTENT -->
+  <div class="section-head" id="sample-content">
+    <h2>Free <span class="accent">sample</span></h2>
+    <span class="count">PAGES 1 TO 3 · UNGATED</span>
+  </div>
+  <p class="section-intro">The first three pages are below in full. They cover Property and Country Mode, document numbering and series, and fiscal folio types. This is exactly what you get in the paid version, just for one third of the document. If the depth here matches what you need, the rest is the same standard.</p>
+
+  <!-- SECTION 01 -->
+  <div class="sample-section">
+    <span class="sample-badge">Section 01 · Free</span>
+    <h3>Property &amp; Country Mode setup</h3>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6; margin-bottom: 16px;">Country Mode is the master switch that activates Portugal-specific fiscal logic across the entire OPERA Cloud property. Without it, none of the PT-specific exports, folio types, or AT integrations become visible. This must be set before any other configuration begins.</p>
+
+    <h4>Configuration checks</h4>
+    <ul class="check-list">
+      <li><strong>Country Mode</strong> set to <code>PT</code> at <code>Administration → Enterprise → Properties → [Property] → General Information</code>. Verify by opening any new reservation: PT-specific fields (NIF, Cidadão Portuguese ID checkbox) must appear.</li>
+      <li><strong>Default currency</strong> set to <code>EUR</code>. Multi-currency posting allowed but EUR must be the property base currency for SAF-T compliance.</li>
+      <li><strong>Property timezone</strong> set to <code>Europe/Lisbon</code> (UTC+0/+1). Critical for Business Date alignment with AT submission deadlines.</li>
+      <li><strong>Property language</strong> includes Portuguese (PT). Folios printed for guests must offer PT as a language option even if EN is the staff working language.</li>
+      <li><strong>Fiscal Folio Printing</strong> OPERA Control activated under <code>Administration → Enterprise → OPERA Controls → Cashiering group</code>. This unlocks the fiscal folio workflow used by every charge posting downstream.</li>
+    </ul>
+
+    <h4>Common mistakes</h4>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6;">Setting Country Mode after going live causes existing reservations and folios to render in the wrong format. Country Mode must be set during Configuration, before any production data exists. If switching mid-life, all existing folios become non-compliant for AT and require manual credit-note + re-issue workflow.</p>
+  </div>
+
+  <!-- SECTION 02 -->
+  <div class="sample-section">
+    <span class="sample-badge">Section 02 · Free</span>
+    <h3>Document numbering &amp; series</h3>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6; margin-bottom: 16px;">Portuguese law requires sequential, gap-free numbering for every fiscal document type independently. FT, FS, NC, ND, FR each have their own series. Once a number is allocated it cannot be reused, even if the document is voided. AT will reject SAF-T exports with sequence gaps.</p>
+
+    <h4>Configuration checks</h4>
+    <ul class="check-list">
+      <li><strong>Each fiscal document type</strong> (FT, FS, NC, ND, FR) has at least one series defined under <code>Administration → Financial → Cashiering Management → Document Types</code>. Series codes typically prefixed by year (<code>FT2026</code>) or property (<code>FT-LIS-26</code>).</li>
+      <li><strong>Starting number</strong> set per series. Standard practice: start at 1 for new property, continue sequence for existing property migrating from another PMS. Document the carry-over with the AT before go-live.</li>
+      <li><strong>Series validity dates</strong> set with end date in the future. Most properties define series annually with a 31 December cutover and 1 January start of new series.</li>
+      <li><strong>Communication to AT</strong> completed for each new series via Portal das Finanças before first use. AT issues a series validation code that must be entered in OPERA against the series record.</li>
+      <li><strong>No deletion permission</strong> for fiscal document records confirmed at the user role level. Only management roles should have void/cancel permission, never delete. Deletion of a fiscal document creates an unrecoverable gap.</li>
+    </ul>
+
+    <h4>Common mistakes</h4>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6;">Allowing front-desk roles to void documents without supervisor approval. Voids appear as gaps in the SAF-T sequence and must be paired with credit notes referencing the voided document. The standard workflow is: post FT → guest disputes → issue NC referencing FT → both appear in SAF-T, sequence intact.</p>
+  </div>
+
+  <!-- SECTION 03 -->
+  <div class="sample-section">
+    <span class="sample-badge">Section 03 · Free</span>
+    <h3>Fiscal folio types &amp; print tasks</h3>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6; margin-bottom: 16px;">OPERA Cloud uses folio templates to generate the visible PDF/print output. Portugal-specific templates include the digital signature hash, ATCUD code, QR code, and required legal text. Using a generic template produces a non-compliant invoice that AT will reject.</p>
+
+    <h4>Configuration checks</h4>
+    <ul class="check-list">
+      <li><strong>sample_folio_portugal</strong> stationery template imported and active. Customised version saved under property-specific name (<code>folio_lis_pt</code>) so future Oracle updates don't overwrite.</li>
+      <li><strong>SIGNATURE_HASH</strong> and <strong>SIGNATURE_HASH_FOOTER</strong> merge codes present in the folio template. These render the digital signature required for AT compliance. Missing merge codes mean printed folios are not legally valid.</li>
+      <li><strong>ATCUD code</strong> merge field present. This is the unique document code generated from the AT-issued series validation code plus the document number.</li>
+      <li><strong>QR code</strong> rendering correctly on the folio. Test by scanning printed output with any QR reader. The decoded string must contain document type, NIF, gross total, and signature hash per AT specification.</li>
+      <li><strong>Folio Type Prefix and Suffix</strong> OPERA Control activated where the property uses prefixed numbering (<code>FT2026/000123</code>). Validate that the prefix appears in both the printed folio AND the SAF-T export.</li>
+      <li><strong>Folio No Reprint</strong> OPERA Control activated. Required as a prerequisite for the Print Fiscal Information Folio control. Without this, reprints generate new fiscal numbers, breaking sequence.</li>
+    </ul>
+
+    <h4>Common mistakes</h4>
+    <p style="color: var(--ink-soft); font-size: 13px; line-height: 1.6;">Going live with the generic <code>sample_folio.rtf</code> template instead of <code>sample_folio_portugal.rtf</code>. The generic template is missing all PT-specific merge codes. First invoices print without signature, ATCUD, or QR. Properties typically discover this on day two when AT rejects the first SAF-T submission.</p>
+  </div>
+
+  <!-- GATED PREVIEW (sections 4-12 blurred) -->
+  <div class="gated-preview">
+    <h3>Sections 04 through 12 · Locked</h3>
+    <div class="locked-content">
+      <p><strong>Section 04 · Transaction codes &amp; tax mapping.</strong> Every transaction code used at the property must map to a fiscal category that AT recognises. Room revenue, F&amp;B revenue, mini-bar, telephone, laundry, parking, spa, all distinct...</p>
+      <p><strong>Section 05 · Tax types, IVA codes, exemption reasons.</strong> Standard rate 23%, reduced rate 13%, reduced 6%, exempt categories under specific articles of the IVA code. Each must be configured with the correct IVA rate code, exemption reason text...</p>
+      <p><strong>Section 06 · NIF validation &amp; profile rules.</strong> NIF (Número de Identificação Fiscal) is a 9-digit number with a checksum on the last digit. OPERA Cloud validates format but not real-world existence. For B2B invoices the NIF is mandatory. For B2C below €1000...</p>
+      <p><strong>Section 07 · Digital signatures &amp; ATCUD.</strong> The signature hash is generated using the property's certified private key against a string composed of date, document type, document number, gross total, and the previous document's signature. ATCUD combines the AT-issued validation code with the document number to produce a unique cross-property reference...</p>
+      <p>Each subsequent section follows the same depth: configuration checks with exact menu paths, the OPERA Controls and parameter names involved, code or merge-field examples where relevant, and the common mistakes that make properties fail their first AT submission.</p>
+    </div>
+    <div class="blur-mask"></div>
+    <a href="#buy-standard" class="unlock-cta" data-tier="standard" data-price="39">Unlock all 12 sections · €39</a>
+  </div>
+
+  <!-- WHO IT IS FOR -->
+  <div class="section-head">
+    <h2>Who this <span class="accent">is for</span></h2>
+    <span class="count">VERIFIED USE CASES</span>
+  </div>
+
+  <div class="tiles">
+    <div class="tile span-4">
+      <div class="head">
+        <div class="icon teal"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+        <h3>Hotels going live in Portugal</h3>
+      </div>
+      <p class="desc">Pre go-live configuration audit. Run through the checklist two weeks before cutover. Catches the configuration gaps Oracle's standard implementation methodology does not flag.</p>
+    </div>
+    <div class="tile span-4">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Implementation consultants</h3>
+      </div>
+      <p class="desc">Fast-track new consultants joining a project mid-stream. Beats reading six Oracle PDFs to build context. Every page maps to a real action they will be asked to perform.</p>
+    </div>
+    <div class="tile span-4">
+      <div class="head">
+        <div class="icon green"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg></div>
+        <h3>Properties already live</h3>
+      </div>
+      <p class="desc">Self-audit existing configuration against the checklist. Many properties go live with three to seven gaps that surface only at the first SAF-T submission. Fix them on your timeline, not AT's.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-head">
+    <h2>Common <span class="accent">questions</span></h2>
+    <span class="count">FAQ</span>
+  </div>
+
+  <div class="faq-block">
+    <details>
+      <summary>Is this an Oracle product?</summary>
+      <p>No. Aperture is independent. This checklist references Oracle's official documentation but is not endorsed by, sponsored by, or affiliated with Oracle Corporation. Every configuration step references Oracle's published menu paths and OPERA Controls; the value we add is consolidating, sequencing, and field-testing them.</p>
+    </details>
+    <details>
+      <summary>How current is the content?</summary>
+      <p>Validated against OPERA Cloud's latest releases. Oracle ships quarterly updates and we revise the checklist within 30 days of each release. Standard tier includes free updates for 12 months. Pro and Agency tiers include priority access to new versions.</p>
+    </details>
+    <details>
+      <summary>Can I get a refund if it does not match my situation?</summary>
+      <p>Yes. 14-day no-questions refund. Reply to the delivery email and we refund via Stripe within two business days. No survey, no friction.</p>
+    </details>
+    <details>
+      <summary>Will it work for chains with multiple Portugal properties?</summary>
+      <p>Yes. The Pro tier includes the multi-property tracking sheet. Each row tracks one property's status against every check. Standard works fine for a single property; Pro is purpose-built for chains running 3+ properties under one fiscal umbrella.</p>
+    </details>
+    <details>
+      <summary>What format is the deliverable?</summary>
+      <p>PDF, professionally typeset, A4. Pro tier adds an Excel tracking sheet. Agency tier adds the editable .docx source so consultants can rebrand and redistribute under their own logo.</p>
+    </details>
+    <details>
+      <summary>Do I need to be a Tiago Fitas client to buy this?</summary>
+      <p>No. The checklist is a standalone product. Buying it does not create a consulting engagement, and engaging Aperture for consulting does not require buying the checklist. They are independent.</p>
+    </details>
+    <details>
+      <summary>What if I find a configuration step that's missing or wrong?</summary>
+      <p>Email us. Genuine corrections from buyers get acknowledged in the next quarterly update. Material additions trigger a free update push to all existing buyers within 30 days.</p>
+    </details>
+  </div>
+
+  <!-- BUY -->
+  <div class="section-head" id="buy-standard">
+    <h2>Buy now or join the <span class="accent">waitlist</span></h2>
+    <span class="count">CHECKOUT · INSTANT DELIVERY</span>
+  </div>
+  <p class="section-intro">The Stripe checkout below is wired up for the Standard tier (€39). For Pro and Agency tiers, contact us directly via email below — we apply founding-cohort discounts manually for the first fifty buyers.</p>
+
+  <div style="background: var(--surface); border: 1px solid rgba(29, 41, 57, 0.08); border-radius: 12px; padding: 32px; text-align: center; margin: 24px 0;">
+    <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 8px;">Standard tier</p>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 56px; line-height: 1; color: var(--ink); margin: 8px 0;">€39</div>
+    <p style="font-size: 13px; color: var(--ink-soft); margin: 0 0 24px;">Full 12-page PDF · 40+ checks · 12 months of updates · Instant delivery</p>
+    <a href="mailto:tiagofitas@hotmail.com?subject=Aperture%20%E2%80%94%20Buy%20Portugal%20SAF-T%20Checklist&amp;body=Hi%20Tiago%2C%0A%0AI%27d%20like%20to%20buy%20the%20Portugal%20SAF-T%20Fiscal%20Checklist.%0A%0ATier%3A%20Standard%20%E2%82%AC39%0AProperty%2Fgroup%3A%20%0ABilling%20email%3A%20%0A%0APlease%20send%20me%20the%20Stripe%20payment%20link.%0A%0ABest%2C%0A" class="btn btn-accent" style="font-size: 15px; padding: 14px 32px;">
+      Buy €39 → Email checkout
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p style="font-size: 11px; color: var(--ink-soft); margin: 16px 0 0; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.06em;">
+      STRIPE INTEGRATION COMING · CURRENTLY EMAIL-INVOICED · &lt; 1 HOUR TURNAROUND
+    </p>
+  </div>
+
+  <p style="font-size: 13px; color: var(--ink-soft); text-align: center; margin: 32px 0 8px;">
+    Or join the early access list to get notified when self-serve checkout goes live with founding-cohort pricing locked in.
+  </p>
+  <p style="text-align: center; margin-bottom: 48px;">
+    <a href="index.html#waitlist" class="btn btn-secondary" style="font-size: 14px;">Join the early access list →</a>
+  </p>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><div class="brand-mark"></div><span class="name">Aperture<span class="dot">.</span></span></a>
+        <p class="blurb">An independent reference library and consulting practice for Oracle Hospitality OPERA Cloud. Legacy OPERA 5 support for migration projects.</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Library</h4>
+        <a href="index.html">Home</a>
+        <a href="modules.html">Modules</a>
+        <a href="services.html">Services</a>
+        <a href="resources.html">Documentation</a>
+        <a href="videos.html">Videos</a>
+        <a href="xml-library.html">XML Samples</a>
+      </div>
+      <div class="footer-nav">
+        <h4>Toolkits</h4>
+        <a href="checklist-portugal-saft.html">Portugal SAF-T Checklist</a>
+        <a href="index.html#waitlist">Spain SII Pack (soon)</a>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal &amp; trademark</h4>
+        <p><strong>Independent product.</strong> Aperture is not affiliated with, endorsed by, sponsored by, or otherwise connected to Oracle Corporation or any of its subsidiaries.</p>
+        <p><strong>Trademarks.</strong> ORACLE®, OPERA®, OPERA Cloud®, MICROS®, Simphony®, and Oracle Hospitality™ are trademarks or registered trademarks of Oracle Corporation.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 APERTURE · INDEPENDENT REFERENCE</div>
+      <div>v0.2 · IN DEVELOPMENT</div>
+    </div>
+    <div class="footer-credits">
+      <div class="credits-line">
+        <span class="credits-label">BUILD</span>
+        <span>Hand-coded HTML, CSS, vanilla JS &middot; No frameworks &middot; No trackers &middot; No cookies</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">AI-ASSIST</span>
+        <span>Architecture and copy refined with <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude (Anthropic)</a> &middot; Reviewed and edited by Tiago Fitas</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">SOURCE</span>
+        <span>Hosted on <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a> &middot; Version-controlled on <a href="https://github.com/austugal" target="_blank" rel="noopener">GitHub</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XML Samples · Aperture</title>
+<meta name="description" content="OXI integration XML samples in profile.fidelio.4.0 namespace. Profile, reservation, block, message request templates ready to download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><div class="brand-mark"></div><span class="name">Aperture<span class="dot">.</span></span></a>
+    <div class="topbar-meta">
+      <span class="pill">REFERENCE LIBRARY</span>
+      <span>v0.2 · IN DEVELOPMENT</span>
+    </div>
+  </div>
+</header>
+
+<nav class="menubar">
+  <div class="menubar-inner">
+    <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a>
+    <a href="modules.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Modules</a>
+    <a href="services.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Services</a>
+    <a href="resources.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Documentation</a>
+    <a href="videos.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Videos</a>
+    <a href="xml-library.html" class="menu-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>XML Samples</a>
+    <div class="menubar-actions">
+      <a href="index.html#waitlist" class="btn btn-accent" style="padding: 6px 14px; font-size: 12px;">Early access</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div>
+      <h1>XML <span class="accent">samples.</span></h1>
+      <p class="subtitle">OXI integration reference · profile.fidelio.4.0 namespace · 16 samples</p>
+    </div>
+    <div class="page-header-meta">
+      <span>16 FILES</span>
+      <span>·</span>
+      <span>VIEW · DOWNLOAD · COPY</span>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>About these samples →</strong> XML files in this library are integration reference samples in the <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px;">profile.fidelio.4.0</span> namespace, used by integration developers working against the OXI XML interface. All sample data is anonymised — credit card numbers are masked, property names are sample data. Use these as a structural reference when building integrations against OPERA. They are illustrative only and not warranted for production use. Aperture does not warrant accuracy or completeness — verify against current Oracle OXI documentation.
+  </div>
+
+  <!-- STAT TILES -->
+  <div class="tiles">
+    <div class="tile span-3">
+      <div class="stat">
+        <div class="stat-icon teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div>
+        <div><div class="stat-num">7</div><div class="stat-label">Profile types</div></div>
+      </div>
+    </div>
+    <div class="tile span-3">
+      <div class="stat">
+        <div class="stat-icon green"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6"/></svg></div>
+        <div><div class="stat-num">16</div><div class="stat-label">Sample files</div></div>
+      </div>
+    </div>
+    <div class="tile span-3">
+      <div class="stat">
+        <div class="stat-icon orange"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div><div class="stat-num">XML</div><div class="stat-label">profile.fidelio.4.0</div></div>
+      </div>
+    </div>
+    <div class="tile span-3">
+      <div class="stat">
+        <div class="stat-icon purple"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+        <div><div class="stat-num">↓</div><div class="stat-label">All free to download</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILES -->
+  <div class="section-head">
+    <h2>Profile <span class="accent">samples.</span></h2>
+    <span class="count">09 FILES · GUEST · COMPANY · TRAVEL · GROUP · SOURCE · CONTACT</span>
+  </div>
+  <div class="tiles">
+
+    <div class="tile span-4 xml-card" data-name="individual profile guest">
+      <div class="head"><span class="tag">GUEST</span><span class="size">4.3 KB</span></div>
+      <h4>Individual Profile</h4>
+      <p class="desc">Standard guest profile with name, address, electronic addresses, credit card, primary language.</p>
+      <div class="fields">profileType="GUEST" · IndividualName · PostalAddresses · CreditCards · primaryLanguageID</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Individual_Profile.xml', 'Individual Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Individual_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="company profile corporate">
+      <div class="head"><span class="tag">CORPORATE</span><span class="size">1.9 KB</span></div>
+      <h4>Company Profile</h4>
+      <p class="desc">Corporate account profile for B2B accounts. Includes business address, profile ID, sample OXI account.</p>
+      <div class="fields">profileType="CORPORATE" · profileID · PostalAddresses (B-type) · genericName</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Company_Profile.xml', 'Company Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Company_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="travel agent ta profile">
+      <div class="head"><span class="tag">TRAVEL</span><span class="size">2.5 KB</span></div>
+      <h4>Travel Agent Profile</h4>
+      <p class="desc">Travel agent profile for commission tracking. Includes IATA, electronic addresses, commission codes.</p>
+      <div class="fields">profileType="TRAVEL" · ElectronicAddresses · genericName · profileID</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Travel_Agent_Profile.xml', 'Travel Agent Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Travel_Agent_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="group profile">
+      <div class="head"><span class="tag">GROUP</span><span class="size">2.2 KB</span></div>
+      <h4>Group Profile</h4>
+      <p class="desc">Group account profile for blocks and group bookings. Used for inbound tour groups, weddings, conferences.</p>
+      <div class="fields">profileType="GROUP" · genericName · PostalAddresses · profileID</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Group_Profile.xml', 'Group Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Group_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="source profile">
+      <div class="head"><span class="tag">SOURCE</span><span class="size">2.3 KB</span></div>
+      <h4>Source Profile</h4>
+      <p class="desc">Source code profile for tracking booking origin. Wholesalers, OTAs, direct channels mapped here.</p>
+      <div class="fields">profileType="SOURCE" · genericName · sourceCode · address details</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Source_Profile.xml', 'Source Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Source_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="contact profile">
+      <div class="head"><span class="tag">CONTACT</span><span class="size">4.2 KB</span></div>
+      <h4>Contact Profile</h4>
+      <p class="desc">Contact profile linked to a parent company or group. Sales contacts, decision-makers, purchasing managers.</p>
+      <div class="fields">profileType="CONTACT" · IndividualName · linked profileID · communications</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Contact_Profile.xml', 'Contact Profile')">View</button>
+        <a class="xml-btn" href="xml-library/Contact_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="profile negotiated rate">
+      <div class="head"><span class="tag">NEGOTIATED</span><span class="size">4.5 KB</span></div>
+      <h4>Profile with Negotiated Rate</h4>
+      <p class="desc">Corporate or TA profile with linked negotiated rate codes. Useful pattern for B2B account onboarding flows.</p>
+      <div class="fields">NegotiatedRates · rateCode · profileID · validity dates</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Profile_With_Negotiated_Rate.xml', 'Profile with Negotiated Rate')">View</button>
+        <a class="xml-btn" href="xml-library/Profile_With_Negotiated_Rate.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="profile activity sales">
+      <div class="head"><span class="tag">ACTIVITY</span><span class="size">7.0 KB</span></div>
+      <h4>Profile Activity</h4>
+      <p class="desc">Sales activities, to-dos and appointments linked to a profile. Used for sales team CRM workflows.</p>
+      <div class="fields">ActivityType · scheduledDate · status · linked profileID · notes</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Profile_Activity.xml', 'Profile Activity')">View</button>
+        <a class="xml-btn" href="xml-library/Profile_Activity.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="profile relationship">
+      <div class="head"><span class="tag">RELATIONSHIP</span><span class="size">5.4 KB</span></div>
+      <h4>Profile Relationship</h4>
+      <p class="desc">Defines parent-child relationships between profiles. Company-Contact, Group-Member patterns.</p>
+      <div class="fields">RelationshipType · parentProfileID · childProfileID · role</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Profile_New_Relationship.xml', 'Profile Relationship')">View</button>
+        <a class="xml-btn" href="xml-library/Profile_New_Relationship.xml" download>Download</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCKS + RESERVATIONS -->
+  <div class="section-head">
+    <h2>Block & reservation <span class="accent">samples.</span></h2>
+    <span class="count">04 FILES · BLOCKS + RESERVATIONS + STAYS</span>
+  </div>
+  <div class="tiles">
+
+    <div class="tile span-4 xml-card" data-name="new reservation">
+      <div class="head"><span class="tag req">REQUEST</span><span class="size">16.3 KB</span></div>
+      <h4>New Reservation</h4>
+      <p class="desc">Comprehensive reservation creation request. Full payload with rates, room types, packages, addresses, payment.</p>
+      <div class="fields">Reservation · Stay · ResProfiles · ResPaymentMethods · packages · routing</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/New_Reservation.xml', 'New Reservation')">View</button>
+        <a class="xml-btn" href="xml-library/New_Reservation.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="block profile request">
+      <div class="head"><span class="tag req">REQUEST</span><span class="size">1.3 KB</span></div>
+      <h4>Block Profile · Request</h4>
+      <p class="desc">Block creation request. Used to create a group block allocation against a profile.</p>
+      <div class="fields">Block · blockCode · accountProfile · arrival · departure · roomTypes</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Block_Profile.xml', 'Block Profile Request')">View</button>
+        <a class="xml-btn" href="xml-library/Block_Profile.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="block profile response">
+      <div class="head"><span class="tag res">RESPONSE</span><span class="size">1.5 KB</span></div>
+      <h4>Block Profile · Response</h4>
+      <p class="desc">Confirmation response for block creation. Contains the assigned blockID and confirmation code.</p>
+      <div class="fields">BlockResponse · blockID · status · confirmationNumber</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Block_Profile_Response.xml', 'Block Profile Response')">View</button>
+        <a class="xml-btn" href="xml-library/Block_Profile_Response.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="stay message">
+      <div class="head"><span class="tag">STAY</span><span class="size">2.8 KB</span></div>
+      <h4>Stay Message</h4>
+      <p class="desc">Past stay history record. Linked to a profile to maintain stay history across systems.</p>
+      <div class="fields">Stay · arrivalDate · departureDate · profileID · revenue · roomType</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Stay_Message.xml', 'Stay Message')">View</button>
+        <a class="xml-btn" href="xml-library/Stay_Message.xml" download>Download</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MESSAGES + LEGACY -->
+  <div class="section-head">
+    <h2>Messages & <span class="accent">legacy.</span></h2>
+    <span class="count">03 FILES · ENVELOPES + RESYNC + OPERA 5</span>
+  </div>
+  <div class="tiles">
+
+    <div class="tile span-4 xml-card" data-name="message request">
+      <div class="head"><span class="tag req">REQUEST</span><span class="size">0.2 KB</span></div>
+      <h4>Message Request</h4>
+      <p class="desc">Minimal OXI message request envelope. Use as a wrapper template when constructing custom OXI messages.</p>
+      <div class="fields">MessageRequest · destinationSystemType · sourceSystemType</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Message_Request.xml', 'Message Request')">View</button>
+        <a class="xml-btn" href="xml-library/Message_Request.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="profile resync request">
+      <div class="head"><span class="tag req">REQUEST</span><span class="size">4.3 KB</span></div>
+      <h4>Profile Resync Request</h4>
+      <p class="desc">Resync trigger to pull a profile from a remote system. Used after data divergence between OPERA and external CRM.</p>
+      <div class="fields">ResyncRequest · profileID · sourceSystemType · forceUpdate</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Profile_Resync_Request.xml', 'Profile Resync Request')">View</button>
+        <a class="xml-btn" href="xml-library/Profile_Resync_Request.xml" download>Download</a>
+      </div>
+    </div>
+
+    <div class="tile span-4 xml-card" data-name="sample profile v5 opera 5">
+      <div class="head"><span class="tag">OPERA 5</span><span class="size">9.9 KB</span></div>
+      <h4>Sample Profile v5</h4>
+      <p class="desc">Comprehensive OPERA 5-era profile sample. Multiple addresses, communication channels, memberships, preferences.</p>
+      <div class="fields">Profile · Memberships · Communications · Preferences · Comments</div>
+      <div class="actions">
+        <button class="xml-btn primary" onclick="viewXml('xml-library/Sample_Profile_v5.xml', 'Sample Profile v5')">View</button>
+        <a class="xml-btn" href="xml-library/Sample_Profile_v5.xml" download>Download</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DOWNLOAD ALL -->
+  <div class="tile span-12" style="background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); color: white; padding: 40px; text-align: center; border: none; margin-top: 24px;">
+    <h3 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; margin-bottom: 12px; font-weight: 400;">Need them all?</h3>
+    <p style="font-size: 14px; opacity: 0.9; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">Download the full library as a single zip. Use them as starting points for OXI mappings, OHIP integration tests, or training material.</p>
+    <a href="xml-library.zip" download class="btn" style="background: white; color: var(--teal); border-color: white;">↓ Download all 16 samples (ZIP)</a>
+  </div>
+
+</div>
+
+<!-- VIEW MODAL -->
+<div class="modal-bg" id="xmlModal" onclick="if(event.target.id==='xmlModal')closeXml()">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Sample</h3>
+      <div style="display: flex; gap: 8px;">
+        <button class="xml-btn" onclick="copyXml()">Copy</button>
+        <button class="modal-close" onclick="closeXml()">×</button>
+      </div>
+    </div>
+    <div class="modal-body"><pre id="modalContent">Loading...</pre></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><div class="brand-mark"></div><span class="name">Aperture<span class="dot">.</span></span></a>
+        <p class="blurb">An independent reference library and consulting practice for Oracle Hospitality OPERA Cloud. Legacy OPERA 5 support for migration projects.</p>
+        <p class="blurb" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">Site designed and developed by <a href="https://www.linkedin.com/in/tiagofitas76/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 500;">Tiago Fitas →</a><br><span style="font-size: 11px; color: rgba(255,255,255,0.4);">Senior Hospitality Tech Specialist · Lisbon &middot; Melbourne</span></p>
+      </div>
+      <div>
+        <h4>Library</h4>
+        <ul>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Documentation</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="xml-library.html">XML Samples</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Oracle Resources</h4>
+        <ul>
+          <li><a href="https://docs.oracle.com/en/industries/hospitality/" target="_blank" rel="noopener">Oracle Hospitality docs ↗</a></li>
+          <li><a href="https://learn.oracle.com" target="_blank" rel="noopener">Oracle MyLearn ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal & Trademark</h4>
+        <div class="footer-legal">
+          <p><strong>Independent product.</strong> Aperture is not affiliated with, endorsed by, sponsored by, or otherwise connected to Oracle Corporation.</p>
+          <p><strong>Trademarks.</strong> ORACLE®, OPERA®, OPERA Cloud®, OHIP®, OXI®, IFC8®, MICROS®, Simphony®, and Oracle Hospitality® are registered trademarks of Oracle Corporation.</p>
+          <p><strong>XML samples.</strong> Reference XML samples in the profile.fidelio.4.0 namespace are provided for educational and integration-development purposes only. Sample data is anonymised. Not warranted for production use.</p>
+          <p><strong>No warranty.</strong> Information provided "as is". Always verify against current official Oracle sources before applying to a production environment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 APERTURE · INDEPENDENT REFERENCE</div>
+      <div>v0.2 · IN DEVELOPMENT</div>
+    </div>
+    <div class="footer-credits">
+      <div class="credits-line">
+        <span class="credits-label">BUILD</span>
+        <span>Hand-coded HTML, CSS, vanilla JS &middot; No frameworks &middot; No trackers &middot; No cookies</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">AI-ASSIST</span>
+        <span>Architecture and copy refined with <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude (Anthropic)</a> &middot; Reviewed and edited by Tiago Fitas</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">SOURCE</span>
+        <span>Hosted on <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a> &middot; Version-controlled on <a href="https://github.com/austugal" target="_blank" rel="noopener">GitHub</a> &middot; Typography: Instrument Serif, Inter, JetBrains Mono</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">CONTENT</span>
+        <span>OPERA Cloud feature descriptions reference Oracle's official marketing copy at oracle.com/hospitality. All Oracle product names remain trademarks of their respective owners.</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+var currentXml = '';
+function viewXml(path, title) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalContent').textContent = 'Loading...';
+  document.getElementById('xmlModal').classList.add('open');
+  fetch(path).then(function(r){ return r.text(); }).then(function(t){
+    currentXml = t;
+    document.getElementById('modalContent').textContent = t;
+  }).catch(function(){
+    document.getElementById('modalContent').textContent = 'Could not load file. Try Download instead.';
+  });
+}
+function closeXml() { document.getElementById('xmlModal').classList.remove('open'); }
+function copyXml() {
+  navigator.clipboard.writeText(currentXml).then(function(){ alert('XML copied to clipboard'); });
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeXml(); });
+</script>
+
+</body>
+</html>

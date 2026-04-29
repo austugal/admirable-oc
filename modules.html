@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modules · Aperture</title>
+<meta name="description" content="OPERA Cloud modules, integration platforms (OHIP, OXI, IFC8), and fiscal exports for Portugal and Spain including SAF-T, SII, ES_POLICE, INE, Modelo 347, BAS-Viajeros, CAT-Viajeros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"></div>
+      <span class="name">Aperture<span class="dot">.</span></span>
+    </a>
+    <div class="topbar-meta">
+      <span class="pill">REFERENCE LIBRARY</span>
+      <span>v0.2 · IN DEVELOPMENT</span>
+    </div>
+  </div>
+</header>
+
+<nav class="menubar">
+  <div class="menubar-inner">
+    <a href="index.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a>
+    <a href="modules.html" class="menu-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Modules</a>
+    <a href="services.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82M9 19.4a1.65 1.65 0 00-1.82.33M19.4 9a1.65 1.65 0 00.33-1.82M14.6 4.6a1.65 1.65 0 00-1.51-1H11a1.65 1.65 0 00-1.51 1"/></svg>Services</a>
+    <a href="resources.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Documentation</a>
+    <a href="videos.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Videos</a>
+    <a href="xml-library.html" class="menu-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6 M16 13H8 M16 17H8"/></svg>XML Samples</a>
+    <div class="menubar-actions">
+      <a href="index.html#waitlist" class="btn btn-accent" style="padding: 6px 14px; font-size: 12px;">Early access</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div>
+      <h1>OPERA Cloud <span class="accent">modules.</span></h1>
+      <p class="subtitle">Twelve PMS modules · Three integration platforms · Full Iberia fiscal coverage</p>
+    </div>
+    <div class="page-header-meta">
+      <span>OPERA CLOUD · LATEST</span>
+      <span>·</span>
+      <span>OPERA 5 · LEGACY MIGRATION SUPPORT</span>
+    </div>
+  </div>
+
+  <p class="section-intro">OPERA Cloud is a vast platform. Reservations, profiles, cashiering, housekeeping, rate management, distribution, fiscal compliance, sales and catering. Below is the full surface area we cover, mapped to the menu paths Oracle uses, with one-line field notes from production work across EMEA properties.</p>
+
+  <!-- CORE PMS MODULES -->
+  <div class="section-head">
+    <h2>Core <span class="accent">PMS</span></h2>
+    <span class="count">12 MODULES · DAY-TO-DAY ENGINE</span>
+  </div>
+
+  <div class="tiles">
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon green"><svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg></div>
+        <h3>Reservations</h3>
+      </div>
+      <div class="menu-path">Bookings → Reservations</div>
+      <p class="desc">Quick Book, Room Diary, group reservations, walk-ins, advance check-in with ETR, mass operations, deposits and cancellations.</p>
+      <ul>
+        <li>Reservation creation flows</li>
+        <li>Block reservations and rooming lists</li>
+        <li>Deposit and cancellation rules</li>
+        <li>Reservation merging and splitting</li>
+      </ul>
+      <div class="foot"><span>BOOKINGS</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon blue"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+        <h3>Profiles & CRM</h3>
+      </div>
+      <div class="menu-path">Client Relations → Profiles</div>
+      <p class="desc">Guest, company, travel agent, source, contact and group profiles. Sales account forecasts, loyalty enrolment, profile lookup.</p>
+      <ul>
+        <li>Profile match and merge rules</li>
+        <li>Loyalty programme integration</li>
+        <li>Negotiated rates per profile</li>
+        <li>Sales activities and opportunities</li>
+      </ul>
+      <div class="foot"><span>CRM</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon purple"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h2"/></svg></div>
+        <h3>Cashiering & Billing</h3>
+      </div>
+      <div class="menu-path">Financials → Cashiering</div>
+      <p class="desc">Folios, charges, payments, transfers, settlement, deposits, Post It, refunds, transaction codes, cashier sessions.</p>
+      <ul>
+        <li>Transaction code mapping</li>
+        <li>Folio templates and routing</li>
+        <li>Composite deposit handling</li>
+        <li>Cashier sessions and balancing</li>
+      </ul>
+      <div class="foot"><span>FINANCIALS</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon teal"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4M3 7v10l9 4 9-4V7M3 7l9 4 9-4M12 11v10"/></svg></div>
+        <h3>Front Desk</h3>
+      </div>
+      <div class="menu-path">Front Desk → Arrivals / Departures</div>
+      <p class="desc">Check-in, check-out, room assignment, room moves, registration cards, room keys, queue management, AI room assignment.</p>
+      <ul>
+        <li>Advance check-in with ETR</li>
+        <li>Quick check-out flows</li>
+        <li>Batch and AI room assignment</li>
+        <li>Electronic registration on tablet</li>
+      </ul>
+      <div class="foot"><span>FRONT DESK</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M21 8V5a2 2 0 00-2-2H5a2 2 0 00-2 2v3M21 8H3M21 8v11a2 2 0 01-2 2H5a2 2 0 01-2-2V8M7 13h10"/></svg></div>
+        <h3>Housekeeping</h3>
+      </div>
+      <div class="menu-path">Inventory → Housekeeping</div>
+      <p class="desc">Room status, task sheets, room conditions, maintenance tasks, housekeeping board, task companion, turndown, component suites.</p>
+      <ul>
+        <li>Auto-generated task sheets</li>
+        <li>Task sheet companion app</li>
+        <li>Room conditions and maintenance</li>
+        <li>Out of order and out of service</li>
+      </ul>
+      <div class="foot"><span>INVENTORY</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon red"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M9 9l3 3 5-5"/></svg></div>
+        <h3>Rate Management</h3>
+      </div>
+      <div class="menu-path">Inventory → Rate Management</div>
+      <p class="desc">Rate codes, BAR derivation, rate tiers, packages, restrictions, promotions, negotiated rates, derived rates, yield management.</p>
+      <ul>
+        <li>BAR strategy and dynamic pricing</li>
+        <li>Package configuration</li>
+        <li>Rate restrictions per channel</li>
+        <li>Owner rate code attributes</li>
+      </ul>
+      <div class="foot"><span>INVENTORY</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <h3>Distribution & Channels</h3>
+      </div>
+      <div class="menu-path">Distribution → Channel Management</div>
+      <p class="desc">ARI publication, hurdle rate evaluation, channel offers, rate parity. SiteMinder, SynXis, Profitroom, GDS connections.</p>
+      <ul>
+        <li>Channel manager migration</li>
+        <li>FPLOS hurdle rate logic</li>
+        <li>Rate plan and room type mapping</li>
+        <li>Inventory calculation rules</li>
+      </ul>
+      <div class="foot"><span>DISTRIBUTION</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon purple"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Sales & Catering</h3>
+      </div>
+      <div class="menu-path">Bookings → Blocks & Events</div>
+      <p class="desc">Blocks, events, function diary, catering menus, posting charges, opportunities. Master-Sub blocks, Tour Series.</p>
+      <ul>
+        <li>Block creation and forecasting</li>
+        <li>Catering events and menus</li>
+        <li>Function space management</li>
+        <li>Tour Series replication</li>
+      </ul>
+      <div class="foot"><span>S&C</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon blue"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+        <h3>Reports & Analytics</h3>
+      </div>
+      <div class="menu-path">Reports → Generate / Schedule</div>
+      <p class="desc">Standard reports, scheduled delivery, multi-property copy, BI Publisher templates, R+A folder structure, custom report design.</p>
+      <ul>
+        <li>Custom report templates</li>
+        <li>Scheduled report delivery</li>
+        <li>Cross-property report deployment</li>
+        <li>RTF and BI Publisher edits</li>
+      </ul>
+      <div class="foot"><span>REPORTS</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon green"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Night Audit</h3>
+      </div>
+      <div class="menu-path">Front Desk → End of Day</div>
+      <p class="desc">Auto room rate posting, package charges, deposit forfeiture, no-show processing, EOD reports, business date roll, fiscal export trigger.</p>
+      <ul>
+        <li>Pre-audit cashier closure</li>
+        <li>Revenue journal balancing</li>
+        <li>EOD report distribution</li>
+        <li>Stuck audit diagnostics</li>
+      </ul>
+      <div class="foot"><span>EOD</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon dark"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Configuration & Admin</h3>
+      </div>
+      <div class="menu-path">Administration → Enterprise / Property</div>
+      <p class="desc">Property setup, OPERA Controls, roles, permissions, tasks, workstation config, parameters, application settings, license codes.</p>
+      <ul>
+        <li>OPERA Controls activation</li>
+        <li>Role and task assignment</li>
+        <li>Property template configuration</li>
+        <li>Multi-property administration</li>
+      </ul>
+      <div class="foot"><span>ADMIN</span><span class="badge">We configure</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon amber"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5"/></svg></div>
+        <h3>Loyalty & Membership</h3>
+      </div>
+      <div class="menu-path">Client Relations → Memberships</div>
+      <p class="desc">Membership enrolment, tiers, points accrual, transactions, member referrals, loyalty integration with external CRS systems.</p>
+      <ul>
+        <li>Membership level mapping</li>
+        <li>Tier upgrade automation</li>
+        <li>Points accrual on stay closure</li>
+        <li>External CRS sync</li>
+      </ul>
+      <div class="foot"><span>LOYALTY</span><span class="badge">We configure</span></div>
+    </div>
+  </div>
+
+  <!-- INTEGRATION PLATFORMS -->
+  <div class="section-head">
+    <h2>Integration <span class="accent">platforms.</span></h2>
+    <span class="count">3 PLATFORMS · OHIP · OXI · IFC8</span>
+  </div>
+  <p class="section-intro">Three integration platforms, three different patterns. OHIP for new builds and current Cloud integrations. OXI for legacy XML message-based integrations. IFC8 for real-time payment, POS, key card and other mission-critical interfaces.</p>
+
+  <div class="tiles">
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg></div>
+        <h3>OHIP</h3>
+      </div>
+      <div class="menu-path">Oracle Hospitality Integration Platform</div>
+      <p class="desc">REST APIs, GraphQL streaming, Business Events. The current and future integration surface for OPERA Cloud. OAuth client credentials, scoped credentials per integration.</p>
+      <ul>
+        <li>OAuth handshake setup</li>
+        <li>Streaming subscription approval</li>
+        <li>Property API integrations</li>
+        <li>Distribution API for ARI push</li>
+      </ul>
+      <div class="foot"><span>API · STREAMING</span><span class="badge">We build</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 3v18M3 9h18"/></svg></div>
+        <h3>OXI</h3>
+      </div>
+      <div class="menu-path">OPERA Xchange Interface</div>
+      <p class="desc">XML message-based middleware. Asynchronous queue model for channel managers, CRS, central services. Conversion codes, interface defaults, profile match.</p>
+      <ul>
+        <li>Channel manager migrations</li>
+        <li>Conversion code mapping</li>
+        <li>OXI Hub multi-property setup</li>
+        <li>Failed message reprocessing</li>
+      </ul>
+      <div class="foot"><span>XML · QUEUE</span><span class="badge">We migrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon red"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 12h10M7 9h2M15 9h2"/></svg></div>
+        <h3>IFC8</h3>
+      </div>
+      <div class="menu-path">OPERA Interface Component</div>
+      <p class="desc">TCP/IP middleware for real-time interfaces. Payment, key card, door lock, kiosk, POS, telephone, video. Configurable as Windows service or OCI connector.</p>
+      <ul>
+        <li>OPI payment interface setup</li>
+        <li>VingCard key card config</li>
+        <li>Simphony POS integration</li>
+        <li>IFC8 communication keys</li>
+      </ul>
+      <div class="foot"><span>TCP/IP · REAL-TIME</span><span class="badge">We operate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon purple"><svg viewBox="0 0 24 24"><path d="M2 7h20l-2 12H4z M5 7V5a2 2 0 012-2h10a2 2 0 012 2v2"/></svg></div>
+        <h3>POS · Simphony / MICROS</h3>
+      </div>
+      <p class="desc">F&B and retail point of sale charge posting from Simphony into OPERA Cloud folios. Revenue centre mapping, transaction code translation, room charge auth.</p>
+      <div class="foot"><span>SIMPHONY · IFC8</span><span class="badge">We integrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon blue"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Payment · OPI / FreedomPay</h3>
+      </div>
+      <p class="desc">Oracle Payment Interface and FreedomPay configuration. Token exchange, EMV chip and PIN, card vault, currency mapping, certificate provisioning.</p>
+      <div class="foot"><span>OPI · IFC8 · PSP</span><span class="badge">We integrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon green"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Key Card · VingCard / Salto</h3>
+      </div>
+      <p class="desc">Door lock and key card system integration. Encoder workstation setup, key creation flow, mobile key, retro-fit and online lock configurations.</p>
+      <div class="foot"><span>VINGCARD · SALTO · IFC8</span><span class="badge">We integrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M9 9l3 3 5-5"/></svg></div>
+        <h3>RMS · IDeaS / Duetto</h3>
+      </div>
+      <p class="desc">Revenue Management System integration. Rate and inventory data flow into IDeaS or Duetto. Yield management, demand forecasting, BAR strategy automation.</p>
+      <div class="foot"><span>IDEAS · DUETTO · OHIP</span><span class="badge">We integrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon dark"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+        <h3>Back Office · SUN / SAP</h3>
+      </div>
+      <p class="desc">Nightly GL exports to SunSystems, SAP, Microsoft Dynamics. Transaction code to GL account mapping, balanced journal logic, CFIDCL credit note handling.</p>
+      <div class="foot"><span>SUN · SAP · DYNAMICS</span><span class="badge">We integrate</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon teal"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+        <h3>Channel · SiteMinder / SynXis / Profitroom</h3>
+      </div>
+      <p class="desc">OTA distribution via channel manager. Rate plan mapping, restriction sync, ResNotif inbound bookings, parity monitoring, extranet rate plan link verification.</p>
+      <div class="foot"><span>OXI · ARI · CM</span><span class="badge">We integrate</span></div>
+    </div>
+  </div>
+
+  <!-- FISCAL COMPLIANCE -->
+  <div class="section-head">
+    <h2>Fiscal <span class="accent">compliance.</span></h2>
+    <span class="count">2 REGIMES · MULTIPLE EXPORTS</span>
+  </div>
+  <p class="section-intro">Portugal and Spain look similar on a map. Their fiscal regimes are not. Different schemas, different submission cadences, different authorities, different gotchas. We treat them as two separate practices because that is what they are. Below is the full fiscal export catalogue we work with.</p>
+
+  <div class="disclaimer">
+    <strong>Reference only →</strong> The fiscal export codes below are Oracle's official template names as documented by Oracle. They are reproduced here for navigational reference only. Always check current Oracle documentation (docs.oracle.com) and the official Oracle Hospitality OPERA Cloud Fiscal Reference Guides for Portugal and Spain before configuring any property.
+  </div>
+
+  <div class="tiles">
+    <div class="tile span-6">
+      <div class="fiscal-card pt">
+        <div class="fiscal-flag">🇵🇹 PORTUGAL · AT</div>
+        <h3>Portugal Fiscal Exports</h3>
+        <p class="lead">Mandatory compliance with Autoridade Tributária e Aduaneira (AT). SAF-T monthly submission, sequential invoicing, certified software requirements.</p>
+
+        <ul class="fiscal-list">
+          <li><span class="code">PT_SAFT_104</span><span class="label">SAF-T Portugal monthly XML export per AT schema (current template)</span></li>
+          <li><span class="code">FT · FS · NC · ND · FR</span><span class="label">Document type series: Fatura, Fatura Simplificada, Nota de Crédito, Nota de Débito, Fatura Recibo</span></li>
+          <li><span class="code">CFIDCL / DFIDCL</span><span class="label">Line and document fiscal control indicators for sequential numbering</span></li>
+          <li><span class="code">UPE V2.1+</span><span class="label">Universal Payload Export templates with current Portugal merge codes</span></li>
+          <li><span class="code">PORTAL DAS FINANÇAS</span><span class="label">Submission destination: monthly by 20th of following month</span></li>
+        </ul>
+
+        <div class="fiscal-note">
+          <strong>Field gotcha →</strong> Sequential invoice numbering with no gaps is a legal requirement. You cannot delete or void invoices, only issue credit notes. Each series tracks independently in CFIDCL/DFIDCL. Missing NIF on a B2B invoice fails AT validation.
+        </div>
+      </div>
+    </div>
+
+    <div class="tile span-6">
+      <div class="fiscal-card es">
+        <div class="fiscal-flag">🇪🇸 ESPAÑA · AEAT + REGIONS</div>
+        <h3>Spain Fiscal Exports</h3>
+        <p class="lead">Multiple parallel regimes. Real-time SII to AEAT, daily police reports nationally and per region, monthly INE statistics, annual Modelo 347.</p>
+
+        <ul class="fiscal-list">
+          <li><span class="code">SII (eFolio)</span><span class="label">Suministro Inmediato de Información — invoice XML to AEAT within 4 days</span></li>
+          <li><span class="code">ES_POLICE_EXPORT</span><span class="label">Daily police report (Libro de Viajeros) — automatic via EOD</span></li>
+          <li><span class="code">ES_POLICE_EXPORT_DAY</span><span class="label">Manual police export for any business date up to today</span></li>
+          <li><span class="code">ES_INE</span><span class="label">Monthly Country Statistics export to Instituto Nacional de Estadística</span></li>
+          <li><span class="code">BAS-Viajeros</span><span class="label">Basque Country police XML (Ertzaintza) — regional variant</span></li>
+          <li><span class="code">BAS-Reserva_Hospedaje</span><span class="label">Basque Country reservation XML — regional variant</span></li>
+          <li><span class="code">CAT-Viajeros</span><span class="label">Catalonia police TXT (Mossos d'Esquadra) — regional variant</span></li>
+          <li><span class="code">CAT-Reserva_Hospedaje</span><span class="label">Catalonia reservation TXT — regional variant</span></li>
+          <li><span class="code">Modelo 347</span><span class="label">Annual declaration of operations with third parties over €3,005.06</span></li>
+          <li><span class="code">F1 · F2 · F3 · F4 · F5 · F6</span><span class="label">SII invoice types — full, simplified, partial, registered, agency, R-types</span></li>
+          <li><span class="code">R1 · R2 · R3 · R4 · R5</span><span class="label">SII rectification types for credit/correction notes</span></li>
+          <li><span class="code">Last Name 2 · Last Name 3</span><span class="label">Spanish surname fields (paternal, maternal) — Country Mode = ES only</span></li>
+        </ul>
+
+        <div class="fiscal-note">
+          <strong>Field gotcha →</strong> Spain has national plus regional fiscal/police regimes running in parallel. Properties in Catalonia or the Basque Country submit to regional authorities in addition to or instead of the national report. UPE templates must be V2.1+ to include the Last Name 2/3 fields. Police report sequence numbering uses EXPORT_1ES with HOTELCODE per export.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMON GOTCHAS -->
+  <div class="section-head">
+    <h2>Field-tested <span class="accent">patterns.</span></h2>
+    <span class="count">6 GOTCHAS WE'VE HIT IN PRODUCTION</span>
+  </div>
+
+  <div class="tiles">
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>ABS workaround</h3>
+      </div>
+      <p class="desc">OPERA Cloud formula engine does not support ABS() or GREATEST(). Credit note amounts must use SIGN(x) * x or ((x * x) ^ 0.5). Test in UAT first.</p>
+      <div class="foot"><span>FORMULA ENGINE</span><span class="badge">Field-tested</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>Credit note indicator</h3>
+      </div>
+      <p class="desc">SunSystems and most fiscal receivers expect positive amounts even for credits. The CFIDCL indicator signals credit note status, not a negative sign on the amount.</p>
+      <div class="foot"><span>CFIDCL LOGIC</span><span class="badge">Field-tested</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Empty string trap</h3>
+      </div>
+      <p class="desc">Empty string literals must be '' (two single quotes). Encoding artefacts cause silent save failures. Retype directly in OPERA, never paste from external editor.</p>
+      <div class="foot"><span>ENCODING</span><span class="badge">Field-tested</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+        <h3>Shell export workflow</h3>
+      </div>
+      <p class="desc">Export shell from PRD (read-only). Import into UAT. Run Refresh Property. Rebuild formulas. Validate output. Then apply to PRD with management approval.</p>
+      <div class="foot"><span>UAT vs PRD</span><span class="badge">Field-tested</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6"/></svg></div>
+        <h3>UPE V2.1 templates</h3>
+      </div>
+      <p class="desc">UPE templates must be on V2.1 specifications for current OPERA Cloud. Older templates miss new merge codes and Spain Last Name 2/3 fields.</p>
+      <div class="foot"><span>UPE TEMPLATES</span><span class="badge">Field-tested</span></div>
+    </div>
+
+    <div class="tile span-4 module-tile">
+      <div class="head">
+        <div class="icon orange"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>XSD validation first</h3>
+      </div>
+      <p class="desc">Validate XML against the receiver's XSD schema before submitting to AT or AEAT. Catches structural issues that fail at the authority level.</p>
+      <div class="foot"><span>VALIDATION</span><span class="badge">Field-tested</span></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="form-card">
+    <p class="eyebrow">— Working with one of these?</p>
+    <h2>We've shipped<br>most of them.</h2>
+    <p>Pick a module above. We have implemented it in production at properties across Iberia and EMEA. Configure, fix, migrate — pick the verb that fits.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="services.html" class="btn btn-accent">View services →</a>
+      <a href="index.html#waitlist" class="btn btn-ghost">Early access list</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><div class="brand-mark"></div><span class="name">Aperture<span class="dot">.</span></span></a>
+        <p class="blurb">An independent reference library and consulting practice for Oracle Hospitality OPERA Cloud. Legacy OPERA 5 support for migration projects.</p>
+        <p class="blurb" style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">Site designed and developed by <a href="https://www.linkedin.com/in/tiagofitas76/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 500;">Tiago Fitas →</a><br><span style="font-size: 11px; color: rgba(255,255,255,0.4);">Senior Hospitality Tech Specialist · Lisbon &middot; Melbourne</span></p>
+      </div>
+      <div>
+        <h4>Library</h4>
+        <ul>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Documentation</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="xml-library.html">XML Samples</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Oracle Resources</h4>
+        <ul>
+          <li><a href="https://docs.oracle.com/en/industries/hospitality/" target="_blank" rel="noopener">Oracle Hospitality docs ↗</a></li>
+          <li><a href="https://learn.oracle.com" target="_blank" rel="noopener">Oracle MyLearn ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal & Trademark</h4>
+        <div class="footer-legal">
+          <p><strong>Independent product.</strong> Aperture is not affiliated with, endorsed by, sponsored by, or otherwise connected to Oracle Corporation or any of its subsidiaries.</p>
+          <p><strong>Trademarks.</strong> ORACLE®, OPERA®, OPERA Cloud®, OHIP®, OXI®, IFC8®, MICROS®, Simphony®, and Oracle Hospitality® are registered trademarks of Oracle Corporation. All other product and company names are trademarks or registered trademarks of their respective holders.</p>
+          <p><strong>Documentation.</strong> All Oracle documentation, video tutorials, technical specifications, and proprietary information referenced on this site remain the exclusive intellectual property of Oracle Corporation. Aperture provides indexed links to Oracle's official sources hosted at docs.oracle.com and apexapps.oracle.com — we do not mirror, rehost, or redistribute Oracle content.</p>
+          <p><strong>No warranty.</strong> Information on this site is provided "as is" without warranty of any kind. Always verify against current official Oracle documentation before applying to a production environment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 APERTURE · INDEPENDENT REFERENCE</div>
+      <div>v0.2 · IN DEVELOPMENT</div>
+    </div>
+    <div class="footer-credits">
+      <div class="credits-line">
+        <span class="credits-label">BUILD</span>
+        <span>Hand-coded HTML, CSS, vanilla JS &middot; No frameworks &middot; No trackers &middot; No cookies</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">AI-ASSIST</span>
+        <span>Architecture and copy refined with <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude (Anthropic)</a> &middot; Reviewed and edited by Tiago Fitas</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">SOURCE</span>
+        <span>Hosted on <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a> &middot; Version-controlled on <a href="https://github.com/austugal" target="_blank" rel="noopener">GitHub</a> &middot; Typography: Instrument Serif, Inter, JetBrains Mono</span>
+      </div>
+      <div class="credits-line">
+        <span class="credits-label">CONTENT</span>
+        <span>OPERA Cloud feature descriptions reference Oracle's official marketing copy at oracle.com/hospitality. All Oracle product names remain trademarks of their respective owners.</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

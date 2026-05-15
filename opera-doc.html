@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading · Aperture OPERA Reference</title>
+<meta name="description" content="OPERA Cloud reference document viewer. Aperture independent reference library.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .doc-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 24px 96px;
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .doc-content h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 44px;
+    font-weight: 400;
+    margin: 32px 0 16px;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .doc-content h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 48px 0 14px;
+    line-height: 1.2;
+    color: var(--ink);
+    padding-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .doc-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 32px 0 10px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .doc-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 24px 0 8px;
+    color: var(--ink-soft);
+  }
+  .doc-content p { margin: 0 0 14px; }
+  .doc-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(0,122,138,0.3); }
+  .doc-content a:hover { border-bottom-color: var(--accent); }
+  .doc-content ul, .doc-content ol { margin: 0 0 16px 24px; padding: 0; }
+  .doc-content li { margin: 4px 0; }
+  .doc-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: rgba(0,0,0,0.05);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+  .doc-content pre {
+    background: #1a1a1a;
+    color: #e8e8e8;
+    padding: 18px 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 16px 0;
+  }
+  .doc-content pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+  .doc-content blockquote {
+    border-left: 3px solid var(--accent);
+    margin: 16px 0;
+    padding: 4px 18px;
+    background: rgba(0,122,138,0.04);
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .doc-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .doc-content th, .doc-content td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .doc-content th {
+    font-weight: 600;
+    background: rgba(0,0,0,0.03);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .doc-content hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 32px 0;
+  }
+  .doc-header {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 24px 0;
+  }
+  .doc-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .doc-back:hover { color: var(--accent); }
+  .doc-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 12px 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .doc-meta a { color: var(--accent); text-decoration: none; }
+  .doc-loading, .doc-error {
+    text-align: center;
+    padding: 80px 24px;
+    color: var(--ink-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .doc-error strong { color: #c0392b; display: block; margin-bottom: 8px; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<nav class="menubar">
+  <div class="menu-links">
+    <a href="index.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      Home
+    </a>
+    <a href="modules.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Modules
+    </a>
+    <a href="services.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      Services
+    </a>
+    <a href="resources.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+      Documentation
+    </a>
+    <a href="videos.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      Videos
+    </a>
+    <a href="xml-library.html" class="menu-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6 M16 13H8 M16 17H8"/></svg>
+      XML Samples
+    </a>
+    <a href="opera-library.html" class="menu-link active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M9 7h6 M9 11h6 M9 15h4"/></svg>
+      Reference Library
+    </a>
+    <div class="menubar-actions">
+      <a href="index.html#waitlist" class="btn btn-accent" style="padding: 6px 14px; font-size: 12px;">Early access</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="doc-header">
+    <a href="opera-library.html" class="doc-back">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to library
+    </a>
+  </div>
+
+  <div id="doc-body" class="doc-content">
+    <div class="doc-loading">Loading document...</div>
+  </div>
+
+  <div id="doc-meta" class="doc-content" style="padding-top: 0;"></div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div>© 2026 APERTURE · INDEPENDENT REFERENCE</div>
+      <div>Source: <a href="https://github.com/austugal/opera-references" target="_blank" rel="noopener" style="color: var(--accent);">github.com/austugal/opera-references</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var file = params.get('file');
+    var body = document.getElementById('doc-body');
+    var metaEl = document.getElementById('doc-meta');
+
+    var allowed = [
+      'README.md',
+      'cutover-guide.md',
+      'ideas-g3-continuous-pricing.md',
+      'ssd-interface-service-account.md',
+      'advance-deposit-city-tax-fiscal.md',
+      'training-catalogue.md',
+      'training-schedule-40h.md'
+    ];
+
+    if (!file || allowed.indexOf(file) === -1) {
+      body.innerHTML = '<div class="doc-error"><strong>Document not found.</strong>The requested reference is not in the library. <br><br><a href="opera-library.html">Return to the library index</a>.</div>';
+      document.title = 'Not found · Aperture OPERA Reference';
+      return;
+    }
+
+    var rawUrl = 'https://raw.githubusercontent.com/austugal/opera-references/main/' + file;
+    var ghUrl = 'https://github.com/austugal/opera-references/blob/main/' + file;
+
+    fetch(rawUrl)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function(md) {
+        marked.setOptions({ gfm: true, breaks: false, headerIds: true });
+        body.innerHTML = marked.parse(md);
+
+        var firstH1 = body.querySelector('h1');
+        if (firstH1) {
+          document.title = firstH1.textContent + ' · Aperture OPERA Reference';
+        }
+
+        metaEl.innerHTML = '<div class="doc-meta">' +
+          '<span>Source: <a href="' + ghUrl + '" target="_blank" rel="noopener">' + file + ' on GitHub</a></span>' +
+          '<span>Licence: CC BY-NC-SA 4.0</span>' +
+        '</div>';
+      })
+      .catch(function(err) {
+        body.innerHTML = '<div class="doc-error"><strong>Failed to load document.</strong>' + err.message + '<br><br>You can read it directly on <a href="' + ghUrl + '" target="_blank" rel="noopener">GitHub</a>.</div>';
+      });
+  })();
+</script>
+
+</body>
+</html>
